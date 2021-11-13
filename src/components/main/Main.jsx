@@ -5,7 +5,7 @@ import Footer from "../footer/Footer";
 
 const Main = () => {
 
-    const [dog, setDogPic] = useState( []);
+    const [dog, setDogPic] = useState( {});
     const clearInput = () => {
         setDogPic(()=> '');
     }
@@ -25,7 +25,8 @@ const Main = () => {
     }
     console.log(dog)
 
-    const dogImiges = <Artical mess={dog.message} />
+    const dogImiges = <Artical mess={dog.message} klaida={dog.status} />
+
     // const dogImiges = <Artical mess0={dog.message[0]} mess1={dog.message[1]} mess2={dog.message[2]} mess3={dog.message[3]} />
 
     return (
@@ -36,7 +37,6 @@ const Main = () => {
                 <button onClick={seachDogHandler} >Get Imige</button>
             </form>
             <div>
-                {/*{dog.status = "success" ? {dogImiges} : <h1> Tokios Šuns veislės nėra </h1>}*/}
                 {dogImiges}
             </div>
             <Footer />
