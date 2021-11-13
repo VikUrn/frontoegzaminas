@@ -5,21 +5,28 @@ import Footer from "../footer/Footer";
 
 const Main = () => {
 
-    const [dog, setDogPic]=useState([]);
+    const [dog, setDogPic] = useState( {message: {}, status: ''});
+    const clearInput = () => {
+        setDogPic(()=> '');
+    }
+
+    const [dogBreed, setBreed] = useState();
     const dogHandler = (e) => {
-        setDogPic(e.target.value)
+        setBreed(e.target.value)
         console.log(e.target.value);
     }
 
     const seachDogHandler = (e) => {
         e.preventDefault();
-        fetch( `https://dog.ceo/api/breed/${dog}/images/random/3`)
+        clearInput ();
+        fetch( `https://dog.ceo/api/breed/${dogBreed}/images/random`)
             .then(res => res.json())
-            .then(data => console.log(data))
             .then(data => setDogPic(data))
     }
+    console.log(dog)
 
-    const dogImige = <Artical src={dog.message[0]} src1={dog.message[1]} src2={dog.message[2]}  />
+    const dogImiges = <Artical mess={dog.message} />
+    // const dogImiges = <Artical mess0={dog.message[0]} mess1={dog.message[1]} mess2={dog.message[2]} mess3={dog.message[3]} />
 
     return (
         <main >
@@ -29,7 +36,8 @@ const Main = () => {
                 <button onClick={seachDogHandler} >Get Imige</button>
             </form>
             <div>
-                {dog.status = "success" ? {dogImige} : <h1> Tokios Šuns veislės nėra </h1>}
+                {/*{dog.status = "success" ? {dogImiges} : <h1> Tokios Šuns veislės nėra </h1>}*/}
+                {dogImiges}
             </div>
             <Footer />
         </main>
