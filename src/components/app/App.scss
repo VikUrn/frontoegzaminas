@@ -1,3 +1,6 @@
+.root {
+    text-align: center;
+}
 .container {
     text-align: center;
 }
@@ -13,12 +16,64 @@ input {
     border-radius: 5px;
 }
 img {
-    width: 200px;
-    height: 200px;
-    margin: 10px
+    width: 300px;
+    height: 300px;
 }
 article {
     background-color: darkorange;
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "img img"
+    "img img";
+    text-align: center; //nesuprantu kodėl neveikia
+    gap: 10px;
+}
+header {
+    background-color: bisque;
+    font-style: inherit;
+}
+footer {
+    background-color: bisque;
+    font-style: italic;
+}
+form {
+    background-color: bisque;
+}
+@media (max-width: 768px) {
+    article {
+        background-color: #ffdd00;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas:
+        "img"
+        "img"
+        "img"
+        "img";
+        gap: 5px;
+    }
+    img {
+        width: 100%;
+    }
+    form {
+        background-color: bisque;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas:
+        "input"
+        "button";
+        text-align: center;
+    }
+}
+@media (min-width: 999px) {
+    img {
+        width: 500px;
+        height: 500px;
+    }
+    article {
+        background-color: #f7ff00;
+    }
 }
