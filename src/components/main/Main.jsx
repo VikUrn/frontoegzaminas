@@ -5,7 +5,7 @@ import Footer from "../footer/Footer";
 
 const Main = () => {
 
-    const [dog, setDogPic] = useState( {message: {}, status: ''});
+    const [dog, setDogPic] = useState( []);
     const clearInput = () => {
         setDogPic(()=> '');
     }
