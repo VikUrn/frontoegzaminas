@@ -14,7 +14,7 @@ const Artical = (props) => {
     } else {
         return (
             <div>
-                <h1> Tokio šuns veislės nėra </h1>
+                <h3> Neįveta šuns veislė arba blogai ivesta </h3>
             </div>
         )
     }
